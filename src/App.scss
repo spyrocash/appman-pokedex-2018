@@ -1,0 +1,208 @@
+$cardBoxShadow: #d5d6dc;
+$cardBoxShadowHover: #aeaeae;
+$cardBackground: #f3f4f7;
+$colorAddButton: #dc7777;
+$levelTubeBackground: #e4e4e4;
+$levelTubeBoxShadow: #d4d4d4;
+$levelTubeValueBackground: #f3701a;
+$bottomBarBackground: #ec5656;
+$bottomBarBoxShadow: #d9333387;
+$bottomBarTextColor: #ffffff;
+$modalOutside: #000000a3;
+$modalContentBoxShadow: #474444;
+$modelContentBackground: #ffffff;
+$searchBoxBorder: #e6e6e6;
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+h1 {
+}
+
+.progress-component {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: $levelTubeValueBackground;
+  border-radius: 50px;
+  overflow: hidden;
+  .box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $levelTubeBackground;
+  }
+  .energy {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $levelTubeValueBackground;
+    border-radius: 50px;
+  }
+}
+
+.card-component {
+  display: flex;
+  flex-direction: row;
+  background-color: $cardBackground;
+  padding: 10px;
+  box-shadow: 2px 2px $cardBoxShadow;
+  &:hover {
+    box-shadow: 2px 2px $cardBoxShadowHover;
+  }
+  > .left {
+    flex: 1;
+    image {
+      img {
+      }
+    }
+  }
+  > .right {
+    flex: 2;
+    padding: 10px 20px;
+    > .top {
+      .name {
+      }
+    }
+    > .center {
+      .info {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        > .left {
+          flex: 1;
+          > div {
+          }
+        }
+        > .right {
+          flex: 1;
+          > div {
+            margin: 4px 0;
+          }
+        }
+      }
+    }
+    > .bottom {
+      .happiness-value {
+        display: flex;
+        img {
+          height: 40px;
+          margin: 0 1px;
+        }
+      }
+    }
+  }
+}
+
+.popup-modal {
+  .search-block {
+    position: relative;
+    .search {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      input {
+        width: 100%;
+        height: 50px;
+        font-size: 40px;
+        font-family: "Gaegu";
+      }
+      .icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+      }
+    }
+    z-index: 1;
+  }
+  .card-list-block {
+    height: 500px;
+    overflow: auto;
+    .card-block {
+      position: relative;
+      margin: 20px;
+      .card-component {
+        > .right {
+          flex: 4;
+        }
+      }
+      .add-block {
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: $colorAddButton;
+        font-size: 20px;
+      }
+      &:hover {
+        .add-block {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.App {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .topic {
+    text-align: center;
+  }
+  .container-card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: auto;
+    height: 593px;
+    .container-card {
+      flex: 1 1 48%;
+      margin: 10px;
+      position: relative;
+      .remove-block {
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: $colorAddButton;
+        font-size: 20px;
+      }
+      &:hover {
+        .remove-block {
+          display: block;
+        }
+      }
+    }
+  }
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $bottomBarBackground;
+    height: 80px;
+    text-align: center;
+    .add-button {
+      color: $bottomBarTextColor;
+      font-size: 80px;
+      width: 120px;
+      height: 120px;
+      margin: auto;
+      border-radius: 50%;
+      background-color: $bottomBarBackground;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
